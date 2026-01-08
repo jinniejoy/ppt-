@@ -1,0 +1,720 @@
+{\rtf1\ansi\ansicpg949\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="ko">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>\uc0\u47560 \u52992 \u54021  \u52292 \u45328  \u48516 \u49437  \u54252 \u53944 \u54260 \u47532 \u50724 </title>\
+    <style>\
+        * \{\
+            margin: 0;\
+            padding: 0;\
+            box-sizing: border-box;\
+        \}\
+\
+        body \{\
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;\
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\
+            overflow: hidden;\
+        \}\
+\
+        .presentation-container \{\
+            width: 100vw;\
+            height: 100vh;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            position: relative;\
+        \}\
+\
+        .slide \{\
+            width: 90%;\
+            max-width: 1200px;\
+            height: 80vh;\
+            background: white;\
+            border-radius: 20px;\
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);\
+            padding: 60px;\
+            display: none;\
+            flex-direction: column;\
+            position: relative;\
+            animation: slideIn 0.5s ease-out;\
+        \}\
+\
+        .slide.active \{\
+            display: flex;\
+        \}\
+\
+        @keyframes slideIn \{\
+            from \{\
+                opacity: 0;\
+                transform: translateX(50px);\
+            \}\
+            to \{\
+                opacity: 1;\
+                transform: translateX(0);\
+            \}\
+        \}\
+\
+        .slide-number \{\
+            position: absolute;\
+            bottom: 30px;\
+            right: 60px;\
+            color: #999;\
+            font-size: 14px;\
+        \}\
+\
+        h1 \{\
+            font-size: 48px;\
+            color: #2d3748;\
+            margin-bottom: 20px;\
+            font-weight: 700;\
+        \}\
+\
+        h2 \{\
+            font-size: 36px;\
+            color: #2d3748;\
+            margin-bottom: 30px;\
+            font-weight: 700;\
+        \}\
+\
+        h3 \{\
+            font-size: 24px;\
+            color: #4a5568;\
+            margin-bottom: 15px;\
+            font-weight: 600;\
+        \}\
+\
+        .subtitle \{\
+            font-size: 24px;\
+            color: #718096;\
+            margin-bottom: 40px;\
+            line-height: 1.6;\
+        \}\
+\
+        .content-section \{\
+            flex: 1;\
+            display: flex;\
+            flex-direction: column;\
+            justify-content: center;\
+        \}\
+\
+        .process-step \{\
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\
+            color: white;\
+            padding: 30px;\
+            border-radius: 15px;\
+            margin-bottom: 25px;\
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);\
+        \}\
+\
+        .process-step h3 \{\
+            color: white;\
+            margin-bottom: 10px;\
+        \}\
+\
+        .process-step p \{\
+            font-size: 18px;\
+            line-height: 1.8;\
+            opacity: 0.95;\
+        \}\
+\
+        .key-metrics \{\
+            display: grid;\
+            grid-template-columns: repeat(3, 1fr);\
+            gap: 25px;\
+            margin: 30px 0;\
+        \}\
+\
+        .metric-card \{\
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\
+            padding: 30px;\
+            border-radius: 15px;\
+            text-align: center;\
+            color: white;\
+            box-shadow: 0 10px 25px rgba(240, 147, 251, 0.3);\
+        \}\
+\
+        .metric-value \{\
+            font-size: 42px;\
+            font-weight: 700;\
+            margin-bottom: 10px;\
+        \}\
+\
+        .metric-label \{\
+            font-size: 16px;\
+            opacity: 0.9;\
+        \}\
+\
+        .insight-box \{\
+            background: #f7fafc;\
+            border-left: 5px solid #667eea;\
+            padding: 25px;\
+            margin: 20px 0;\
+            border-radius: 8px;\
+        \}\
+\
+        .insight-box h3 \{\
+            color: #667eea;\
+            margin-bottom: 12px;\
+        \}\
+\
+        .insight-box ul \{\
+            list-style: none;\
+            padding-left: 0;\
+        \}\
+\
+        .insight-box li \{\
+            font-size: 18px;\
+            line-height: 1.8;\
+            color: #4a5568;\
+            margin-bottom: 12px;\
+            padding-left: 25px;\
+            position: relative;\
+        \}\
+\
+        .insight-box li:before \{\
+            content: "\uc0\u10003 ";\
+            position: absolute;\
+            left: 0;\
+            color: #667eea;\
+            font-weight: bold;\
+        \}\
+\
+        .navigation \{\
+            position: fixed;\
+            bottom: 40px;\
+            left: 50%;\
+            transform: translateX(-50%);\
+            display: flex;\
+            gap: 15px;\
+            z-index: 100;\
+        \}\
+\
+        .nav-btn \{\
+            background: white;\
+            border: none;\
+            padding: 15px 30px;\
+            border-radius: 50px;\
+            cursor: pointer;\
+            font-size: 16px;\
+            font-weight: 600;\
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);\
+            transition: all 0.3s ease;\
+        \}\
+\
+        .nav-btn:hover \{\
+            transform: translateY(-3px);\
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);\
+        \}\
+\
+        .nav-btn:disabled \{\
+            opacity: 0.5;\
+            cursor: not-allowed;\
+        \}\
+\
+        .highlight \{\
+            color: #667eea;\
+            font-weight: 600;\
+        \}\
+\
+        .stage-badge \{\
+            display: inline-block;\
+            background: #667eea;\
+            color: white;\
+            padding: 8px 20px;\
+            border-radius: 20px;\
+            font-size: 14px;\
+            font-weight: 600;\
+            margin-bottom: 20px;\
+        \}\
+\
+        .two-column \{\
+            display: grid;\
+            grid-template-columns: 1fr 1fr;\
+            gap: 30px;\
+            margin-top: 20px;\
+        \}\
+\
+        .column-content \{\
+            background: #f7fafc;\
+            padding: 25px;\
+            border-radius: 12px;\
+        \}\
+\
+        .column-content h4 \{\
+            color: #2d3748;\
+            margin-bottom: 15px;\
+            font-size: 20px;\
+        \}\
+\
+        .column-content p \{\
+            color: #4a5568;\
+            line-height: 1.8;\
+            font-size: 16px;\
+        \}\
+\
+        .impact-grid \{\
+            display: grid;\
+            grid-template-columns: repeat(2, 1fr);\
+            gap: 20px;\
+            margin-top: 30px;\
+        \}\
+\
+        .impact-item \{\
+            background: white;\
+            border: 2px solid #e2e8f0;\
+            padding: 25px;\
+            border-radius: 12px;\
+            transition: all 0.3s ease;\
+        \}\
+\
+        .impact-item:hover \{\
+            border-color: #667eea;\
+            transform: translateY(-5px);\
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);\
+        \}\
+\
+        .impact-item h4 \{\
+            color: #667eea;\
+            margin-bottom: 10px;\
+            font-size: 18px;\
+        \}\
+\
+        .impact-item p \{\
+            color: #4a5568;\
+            line-height: 1.6;\
+            font-size: 16px;\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <div class="presentation-container">\
+        <!-- Slide 1: \uc0\u53440 \u51060 \u53952  -->\
+        <div class="slide active">\
+            <div class="content-section">\
+                <h1>\uc0\u47560 \u52992 \u54021  \u52292 \u45328  \u48516 \u49437  \u54532 \u47196 \u51229 \u53944 </h1>\
+                <p class="subtitle">\uc0\u50976 \u51077  \u52292 \u45328 \u48324  \u51068 \u51068  \u49457 \u44284  \u45936 \u51060 \u53552  \u52628 \u52636 \'b7\u44032 \u44277 \'b7\u49884 \u44033 \u54868 \u47484  \u53685 \u54620 <br>\u45936 \u51060 \u53552  \u44592 \u48152  \u51032 \u49324 \u44208 \u51221  \u51648 \u50896 </p>\
+                <div class="key-metrics">\
+                    <div class="metric-card">\
+                        <div class="metric-value">8+</div>\
+                        <div class="metric-label">\uc0\u48516 \u49437  \u52292 \u45328 </div>\
+                    </div>\
+                    <div class="metric-card">\
+                        <div class="metric-value">80%</div>\
+                        <div class="metric-label">\uc0\u54217 \u44512  \u50976 \u54952 \u50984 </div>\
+                    </div>\
+                    <div class="metric-card">\
+                        <div class="metric-value">3\uc0\u45800 \u44228 </div>\
+                        <div class="metric-label">\uc0\u48516 \u49437  \u48156 \u51204  \u44284 \u51221 </div>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="slide-number">1 / 7</div>\
+        </div>\
+\
+        <!-- Slide 2: \uc0\u54532 \u47196 \u51229 \u53944  \u44060 \u50836  -->\
+        <div class="slide">\
+            <h2>\uc0\u54532 \u47196 \u51229 \u53944  \u48176 \u44221  \u48143  \u47785 \u54364 </h2>\
+            <div class="content-section">\
+                <div class="insight-box">\
+                    <h3>\uc0\u55356 \u57263  \u54532 \u47196 \u51229 \u53944  \u47785 \u54364 </h3>\
+                    <ul>\
+                        <li>\uc0\u45796 \u50577 \u54620  \u47560 \u52992 \u54021  \u52292 \u45328 \u51032  \u51068 \u51068  \u49457 \u44284 \u47484  \u52404 \u44228 \u51201 \u51004 \u47196  \u52628 \u51201 </li>\
+                        <li>\uc0\u45936 \u51060 \u53552  \u44592 \u48152  \u52292 \u45328 \u48324  \u54952 \u50984 \u49457  \u54217 \u44032  \u48143  \u52572 \u51201 \u54868 </li>\
+                        <li>\uc0\u49892 \u49884 \u44036  \u51032 \u49324 \u44208 \u51221 \u51012  \u50948 \u54620  \u51649 \u44288 \u51201 \u51064  \u45824 \u49884 \u48372 \u46300  \u44396 \u52629 </li>\
+                    </ul>\
+                </div>\
+                <div class="two-column">\
+                    <div class="column-content">\
+                        <h4>\uc0\u55357 \u56522  \u48516 \u49437  \u45824 \u49345 </h4>\
+                        <p>8\uc0\u44060  \u47560 \u52992 \u54021  \u52292 \u45328  (\u48277 \u51064 , \u53685 \u54633 \u54540 \u47196 \u54021 , \u44160 \u49353 \u54540 \u47196 \u54021 , \u44256 \u44061 \u49468 \u53552 , \u50724 \u54532 \u46972 \u51064 \u44368 \u50977 , \u44032 \u51077 \u50756 \u47308  \u48176 \u45320 , \u49888 \u44508  \u54532 \u47196 \u47784 \u49496  \u48176 \u45320 , \u44592 \u53440 )</p>\
+                    </div>\
+                    <div class="column-content">\
+                        <h4>\uc0\u9201 \u65039  \u48516 \u49437  \u44592 \u44036 </h4>\
+                        <p>2025\uc0\u45380  1\u50900  \u44592 \u51456  \u51068 \u51068  \u45936 \u51060 \u53552  \u49688 \u51665  \u48143  \u48516 \u49437 , \u51109 \u44592  \u53944 \u47116 \u46300  \u52628 \u51201 \u51012  \u53685 \u54620  \u54056 \u53556  \u48156 \u44204 </p>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="slide-number">2 / 7</div>\
+        </div>\
+\
+        <!-- Slide 3: Stage 1 -->\
+        <div class="slide">\
+            <span class="stage-badge">STAGE 1</span>\
+            <h2>\uc0\u52488 \u44592  \u45936 \u51060 \u53552  \u49688 \u51665  \u45800 \u44228 </h2>\
+            <div class="content-section">\
+                <div class="process-step">\
+                    <h3>\uc0\u55357 \u56523  \u50896 \u49884  \u45936 \u51060 \u53552  \u51665 \u44228 </h3>\
+                    <p>\uc0\u51068 \u51088 \u48324  \u52292 \u45328 \u48324  \u52280 \u50668  \u54788 \u54889 \u51012  \u45800 \u49692  \u51665 \u44228 \u54616 \u50668  \u44592 \u52488  \u45936 \u51060 \u53552  \u54869 \u48372 . 1\u50900  1\u51452 \u52264  \u51068 \u51068  \u45936 \u51060 \u53552 \u47484  \u52292 \u45328 \u48324 \u47196  \u44396 \u48516 \u54616 \u50668  \u49688 \u51665 \u54616 \u44256 , \u52509  1,513\u44148 \u51032  \u52280 \u50668  \u45936 \u51060 \u53552 \u47484  \u54869 \u48372 \u54664 \u49845 \u45768 \u45796 .</p>\
+                </div>\
+                <div class="insight-box">\
+                    <h3>\uc0\u51452 \u50836  \u53945 \u51669 </h3>\
+                    <ul>\
+                        <li>\uc0\u51068 \u51088 \u48324 (1/2~1/8) \u52292 \u45328 \u48324  \u52280 \u50668  \u44148 \u49688  \u45800 \u49692  \u51665 \u44228 </li>\
+                        <li>1\uc0\u50900  \u52509 \u54633  \u45936 \u51060 \u53552 \u47196  \u52292 \u45328 \u48324  \u48708 \u51473  \u54028 \u50501 </li>\
+                        <li>\uc0\u48277 \u51064 (550\u44148 ), \u53685 \u54633 \u54540 \u47196 \u54021 (347\u44148 ) \u52292 \u45328 \u51060  \u51452 \u50836  \u50976 \u51077 \u50896 \u51004 \u47196  \u54869 \u51064 </li>\
+                    </ul>\
+                </div>\
+            </div>\
+            <div class="slide-number">3 / 7</div>\
+        </div>\
+\
+        <!-- Slide 4: Stage 2 -->\
+        <div class="slide">\
+            <span class="stage-badge">STAGE 2</span>\
+            <h2>\uc0\u49900 \u54868  \u48516 \u49437  \u45800 \u44228 </h2>\
+            <div class="content-section">\
+                <div class="process-step">\
+                    <h3>\uc0\u55357 \u56520  WoW(Week over Week) \u48708 \u44368  \u48516 \u49437  \u52628 \u44032 </h3>\
+                    <p>\uc0\u51204 \u51452  \u45824 \u48708  \u49457 \u44284  \u48320 \u54868 \u50984 \u51012  \u44228 \u49328 \u54616 \u50668  \u52292 \u45328 \u48324  \u49457 \u51109 \u49464 \u50752  \u44048 \u49548 \u49464 \u47484  \u51221 \u47049 \u51201 \u51004 \u47196  \u52769 \u51221 . 1\u50900  \u51333 \u54633  WoW -82.0%\u46972 \u45716  \u49884 \u44536 \u45328 \u51012  \u53685 \u54644  \u51593 \u44033 \u51201 \u51064  \u45824 \u51025  \u54596 \u50836 \u49457 \u51012  \u54028 \u50501 \u54664 \u49845 \u45768 \u45796 .</p>\
+                </div>\
+                <div class="impact-grid">\
+                    <div class="impact-item">\
+                        <h4>\uc0\u9989  \u49457 \u51109  \u52292 \u45328  \u48156 \u44204 </h4>\
+                        <p>\uc0\u48277 \u51064  61.1%, \u53685 \u54633 \u54540 \u47196 \u54021  122.2% \u46321  \u44256 \u49457 \u51109  \u52292 \u45328  \u49885 \u48324 </p>\
+                    </div>\
+                    <div class="impact-item">\
+                        <h4>\uc0\u9888 \u65039  \u47532 \u49828 \u53356  \u44048 \u51648 </h4>\
+                        <p>\uc0\u50668 \u47084  \u52292 \u45328 \u50640 \u49436  -100% (\u51473 \u45800 ) \u54869 \u51064 \u54616 \u50668  \u51593 \u49884  \u44060 \u49440  \u54596 \u50836 </p>\
+                    </div>\
+                    <div class="impact-item">\
+                        <h4>\uc0\u55357 \u56522  \u48320 \u46041 \u49457  \u52628 \u51201 </h4>\
+                        <p>\uc0\u51068 \u48324  \u48320 \u46041 \u54253 \u51060  \u53360  \u52292 \u45328  \u54028 \u50501 \u51004 \u47196  \u50504 \u51221 \u49457  \u54217 \u44032 </p>\
+                    </div>\
+                    <div class="impact-item">\
+                        <h4>\uc0\u55356 \u57263  \u50864 \u49440 \u49692 \u50948  \u49444 \u51221 </h4>\
+                        <p>\uc0\u45936 \u51060 \u53552  \u44592 \u48152 \u51004 \u47196  \u51665 \u51473  \u44288 \u47532  \u52292 \u45328  \u49440 \u51221 </p>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="slide-number">4 / 7</div>\
+        </div>\
+\
+        <!-- Slide 5: Stage 3 -->\
+        <div class="slide">\
+            <span class="stage-badge">STAGE 3</span>\
+            <h2>\uc0\u44256 \u44553  \u49884 \u44033 \u54868  \u45824 \u49884 \u48372 \u46300  \u44396 \u52629 </h2>\
+            <div class="content-section" style="overflow-y: auto;">\
+                <div class="process-step" style="margin-bottom: 20px;">\
+                    <h3>\uc0\u55357 \u56522  4\u44032 \u51648  \u54645 \u49900  \u49884 \u44033 \u54868  \u52264 \u53944  \u44060 \u48156 </h3>\
+                    <p>\uc0\u49888 \u52397  \u52628 \u51060 , \u50976 \u54952 \u50984  \u48320 \u54868 , \u52292 \u45328 \u48324  \u51216 \u50976 \u50984 , \u52292 \u45328 \u48324  \u49457 \u44284  \u53944 \u47116 \u46300 \u47484  \u53685 \u54633 \u54620  \u45824 \u49884 \u48372 \u46300 </p>\
+                </div>\
+                \
+                <div class="two-column" style="margin-bottom: 15px;">\
+                    <div class="column-content">\
+                        <h4>\uc0\u55357 \u56589  \u49888 \u52397  \u52628 \u51060  \u48516 \u49437 </h4>\
+                        <p>\uc0\u51204 \u52404  \u49888 \u52397 \u44284  \u50976 \u54952  \u49888 \u52397 \u51012  \u46041 \u49884 \u50640  \u54364 \u49884 \u54616 \u50668  \u54408 \u51656  \u44288 \u47532  \u44032 \u45733 . \u54588 \u53356 \u50752  \u51200 \u51216  \u54056 \u53556 \u51012  \u49884 \u44033 \u51201 \u51004 \u47196  \u54028 \u50501 </p>\
+                    </div>\
+                    <div class="column-content">\
+                        <h4>\uc0\u55357 \u56520  \u50976 \u54952 \u50984  \u47784 \u45768 \u53552 \u47553 </h4>\
+                        <p>70% \uc0\u44592 \u51456 \u49440 \u51012  \u49444 \u51221 \u54616 \u50668  \u54408 \u51656  \u44592 \u51456  \u44288 \u47532 . \u54217 \u44512  80% \u50976 \u54952 \u50984  \u50976 \u51648  \u54869 \u51064 </p>\
+                    </div>\
+                </div>\
+                \
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">\
+                    <!-- \uc0\u49888 \u52397  \u52628 \u51060  \u52264 \u53944  -->\
+                    <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">\
+                        <h4 style="color: #2d3748; margin-bottom: 15px; font-size: 16px;">\uc0\u49888 \u52397  \u52628 \u51060 </h4>\
+                        <canvas id="trendChart" style="max-height: 180px;"></canvas>\
+                    </div>\
+                    \
+                    <!-- \uc0\u50976 \u54952 \u50984  \u48320 \u54868  \u52264 \u53944  -->\
+                    <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">\
+                        <h4 style="color: #2d3748; margin-bottom: 15px; font-size: 16px;">\uc0\u50976 \u54952 \u50984  \u48320 \u54868 </h4>\
+                        <canvas id="validityChart" style="max-height: 180px;"></canvas>\
+                    </div>\
+                    \
+                    <!-- \uc0\u52292 \u45328 \u48324  \u51216 \u50976 \u50984  \u52264 \u53944  -->\
+                    <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">\
+                        <h4 style="color: #2d3748; margin-bottom: 15px; font-size: 16px;">\uc0\u52292 \u45328 \u48324  \u51216 \u50976 \u50984 </h4>\
+                        <canvas id="pieChart" style="max-height: 180px;"></canvas>\
+                    </div>\
+                    \
+                    <!-- \uc0\u52292 \u45328 \u48324  \u49457 \u44284  \u53944 \u47116 \u46300  \u52264 \u53944  -->\
+                    <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">\
+                        <h4 style="color: #2d3748; margin-bottom: 15px; font-size: 16px;">\uc0\u52292 \u45328 \u48324  \u49457 \u44284  \u53944 \u47116 \u46300 </h4>\
+                        <canvas id="multiLineChart" style="max-height: 180px;"></canvas>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="slide-number">5 / 7</div>\
+        </div>\
+\
+        <!-- Slide 6: \uc0\u51452 \u50836  \u51064 \u49324 \u51060 \u53944  -->\
+        <div class="slide">\
+            <h2>\uc0\u54645 \u49900  \u51064 \u49324 \u51060 \u53944  \u48143  \u49457 \u44284 </h2>\
+            <div class="content-section">\
+                <div class="insight-box">\
+                    <h3>\uc0\u55357 \u56481  \u45936 \u51060 \u53552  \u44592 \u48152  \u48156 \u44204  \u49324 \u54637 </h3>\
+                    <ul>\
+                        <li><span class="highlight">\uc0\u48277 \u51064  \u52292 \u45328 </span>\u51060  \u51204 \u52404 \u51032  36.4%\u47484  \u52264 \u51648 \u54616 \u47728  \u44032 \u51109  \u51473 \u50836 \u54620  \u50976 \u51077 \u50896 </li>\
+                        <li><span class="highlight">\uc0\u53685 \u54633 \u54540 \u47196 \u54021 </span> \u52292 \u45328 \u51060  122.2% WoW \u49457 \u51109 \u51004 \u47196  \u44032 \u51109  \u48736 \u47480  \u49457 \u51109 \u49464 </li>\
+                        <li>\uc0\u54217 \u44512  <span class="highlight">\u50976 \u54952 \u50984  80%</span> \u50976 \u51648 \u47196  \u45458 \u51008  \u54408 \u51656  \u44288 \u47532  \u45804 \u49457 </li>\
+                        <li>\uc0\u51452 \u44592 \u51201 \u51064  \u49888 \u52397  \u54588 \u53356  \u54056 \u53556  \u48156 \u44204 \u51004 \u47196  <span class="highlight">\u50696 \u52769  \u44032 \u45733 \u49457 </span> \u54869 \u48372 </li>\
+                    </ul>\
+                </div>\
+                <div class="impact-grid">\
+                    <div class="impact-item">\
+                        <h4>\uc0\u55356 \u57263  \u52292 \u45328  \u52572 \u51201 \u54868 </h4>\
+                        <p>\uc0\u49457 \u44284  \u45458 \u51008  \u52292 \u45328 \u50640  \u47532 \u49548 \u49828  \u51665 \u51473  \u48176 \u48516  \u51204 \u47029  \u49688 \u47549 </p>\
+                    </div>\
+                    <div class="impact-item">\
+                        <h4>\uc0\u9889  \u49892 \u49884 \u44036  \u45824 \u51025 </h4>\
+                        <p>\uc0\u51060 \u49345  \u51669 \u54980  \u51312 \u44592  \u48156 \u44204 \u51004 \u47196  \u49888 \u49549 \u54620  \u44060 \u49440  \u51312 \u52824  \u44032 \u45733 </p>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="slide-number">6 / 7</div>\
+        </div>\
+\
+        <!-- Slide 7: \uc0\u44208 \u47200  -->\
+        <div class="slide">\
+            <h2>\uc0\u54532 \u47196 \u51229 \u53944  \u44208 \u47200  \u48143  \u54693 \u54980  \u44228 \u54925 </h2>\
+            <div class="content-section">\
+                <div class="insight-box">\
+                    <h3>\uc0\u10024  \u54532 \u47196 \u51229 \u53944  \u49457 \u44284 </h3>\
+                    <ul>\
+                        <li>\uc0\u50896 \u49884  \u45936 \u51060 \u53552 \u50640 \u49436  \u49892 \u54665  \u44032 \u45733 \u54620  \u51064 \u49324 \u51060 \u53944 \u44620 \u51648  3\u45800 \u44228  \u48516 \u49437  \u54532 \u47196 \u49464 \u49828  \u50756 \u49457 </li>\
+                        <li>8\uc0\u44060  \u52292 \u45328 \u50640  \u45824 \u54620  \u51333 \u54633 \u51201 \u51060 \u44256  \u51649 \u44288 \u51201 \u51064  \u49457 \u44284  \u52628 \u51201  \u49884 \u49828 \u53596  \u44396 \u52629 </li>\
+                        <li>\uc0\u45936 \u51060 \u53552  \u44592 \u48152  \u51032 \u49324 \u44208 \u51221 \u51012  \u50948 \u54620  \u45824 \u49884 \u48372 \u46300  \u44060 \u48156 \u47196  \u50629 \u47924  \u54952 \u50984 \u49457  \u54693 \u49345 </li>\
+                    </ul>\
+                </div>\
+                <div class="process-step">\
+                    <h3>\uc0\u55357 \u56960  \u54693 \u54980  \u48156 \u51204  \u48169 \u54693 </h3>\
+                    <p>\uc0\u50696 \u52769  \u47784 \u45944  \u46020 \u51077 \u51004 \u47196  \u48120 \u47000  \u49457 \u44284  \u50696 \u52769 , \u52292 \u45328  \u44036  \u49345 \u54840 \u51089 \u50857  \u48516 \u49437 \u51012  \u53685 \u54620  \u49884 \u45320 \u51648  \u54952 \u44284  \u44537 \u45824 \u54868 , \u51088 \u46041 \u54868 \u46108  \u50508 \u47548  \u49884 \u49828 \u53596  \u44396 \u52629 \u51004 \u47196  \u49892 \u49884 \u44036  \u47784 \u45768 \u53552 \u47553  \u44053 \u54868 \u47484  \u44228 \u54925 \u54616 \u44256  \u51080 \u49845 \u45768 \u45796 .</p>\
+                </div>\
+            </div>\
+            <div class="slide-number">7 / 7</div>\
+        </div>\
+    </div>\
+\
+    <div class="navigation">\
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">\uc0\u8592  \u51060 \u51204 </button>\
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">\uc0\u45796 \u51020  \u8594 </button>\
+    </div>\
+\
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>\
+    <script>\
+        let currentSlide = 0;\
+        const slides = document.querySelectorAll('.slide');\
+        const prevBtn = document.getElementById('prevBtn');\
+        const nextBtn = document.getElementById('nextBtn');\
+        let chartsInitialized = false;\
+\
+        function showSlide(n) \{\
+            slides.forEach(slide => slide.classList.remove('active'));\
+            \
+            if (n >= slides.length) \{\
+                currentSlide = slides.length - 1;\
+            \} else if (n < 0) \{\
+                currentSlide = 0;\
+            \} else \{\
+                currentSlide = n;\
+            \}\
+            \
+            slides[currentSlide].classList.add('active');\
+            \
+            // Stage 3 \uc0\u49836 \u46972 \u51060 \u46300 \u50640  \u46020 \u45804 \u54616 \u47732  \u52264 \u53944  \u52488 \u44592 \u54868 \
+            if (currentSlide === 4 && !chartsInitialized) \{\
+                setTimeout(initializeCharts, 100);\
+                chartsInitialized = true;\
+            \}\
+            \
+            prevBtn.disabled = currentSlide === 0;\
+            nextBtn.disabled = currentSlide === slides.length - 1;\
+        \}\
+\
+        function changeSlide(direction) \{\
+            showSlide(currentSlide + direction);\
+        \}\
+\
+        function initializeCharts() \{\
+            // \uc0\u49888 \u52397  \u52628 \u51060  \u52264 \u53944 \
+            const trendCtx = document.getElementById('trendChart');\
+            if (trendCtx) \{\
+                new Chart(trendCtx, \{\
+                    type: 'line',\
+                    data: \{\
+                        labels: ['12/03', '12/05', '12/07', '12/11', '12/15', '12/19', '12/23', '12/27', '01/02', '01/06'],\
+                        datasets: [\{\
+                            label: '\uc0\u51204 \u52404  \u49888 \u52397 ',\
+                            data: [560, 320, 600, 380, 570, 360, 550, 410, 500, 230],\
+                            borderColor: '#3b82f6',\
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',\
+                            tension: 0.4,\
+                            fill: true\
+                        \}, \{\
+                            label: '\uc0\u50976 \u54952  \u49888 \u52397 ',\
+                            data: [450, 260, 450, 290, 430, 280, 400, 320, 380, 180],\
+                            borderColor: '#10b981',\
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',\
+                            tension: 0.4,\
+                            fill: true\
+                        \}]\
+                    \},\
+                    options: \{\
+                        responsive: true,\
+                        maintainAspectRatio: true,\
+                        plugins: \{\
+                            legend: \{ display: true, position: 'top' \}\
+                        \},\
+                        scales: \{\
+                            y: \{ beginAtZero: true \}\
+                        \}\
+                    \}\
+                \});\
+            \}\
+\
+            // \uc0\u50976 \u54952 \u50984  \u48320 \u54868  \u52264 \u53944 \
+            const validityCtx = document.getElementById('validityChart');\
+            if (validityCtx) \{\
+                new Chart(validityCtx, \{\
+                    type: 'line',\
+                    data: \{\
+                        labels: ['12/03', '12/05', '12/07', '12/11', '12/15', '12/19', '12/23', '12/27', '01/02', '01/06'],\
+                        datasets: [\{\
+                            label: '\uc0\u50976 \u54952  \u48708 \u50984  (%)',\
+                            data: [85, 81, 75, 76, 83, 78, 75, 82, 81, 78],\
+                            borderColor: '#3b82f6',\
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',\
+                            tension: 0.4,\
+                            fill: true\
+                        \}, \{\
+                            label: '\uc0\u44592 \u51456 \u49440  (70%)',\
+                            data: [70, 70, 70, 70, 70, 70, 70, 70, 70, 70],\
+                            borderColor: '#ef4444',\
+                            borderWidth: 2,\
+                            borderDash: [5, 5],\
+                            pointRadius: 0,\
+                            fill: false\
+                        \}]\
+                    \},\
+                    options: \{\
+                        responsive: true,\
+                        maintainAspectRatio: true,\
+                        plugins: \{\
+                            legend: \{ \
+                                display: true,\
+                                position: 'top',\
+                                labels: \{\
+                                    font: \{ size: 10 \}\
+                                \}\
+                            \}\
+                        \},\
+                        scales: \{\
+                            y: \{ \
+                                beginAtZero: false,\
+                                min: 60,\
+                                max: 100\
+                            \}\
+                        \}\
+                    \}\
+                \});\
+            \}\
+\
+            // \uc0\u52292 \u45328 \u48324  \u51216 \u50976 \u50984  \u52264 \u53944 \
+            const pieCtx = document.getElementById('pieChart');\
+            if (pieCtx) \{\
+                new Chart(pieCtx, \{\
+                    type: 'doughnut',\
+                    data: \{\
+                        labels: ['\uc0\u48277 \u51064 ', '\u53685 \u54633 \u54540 \u47196 \u54021 ', '\u44160 \u49353 \u54540 \u47196 \u54021 ', '\u44256 \u44061 \u49468 \u53552 ', '\u44032 \u51077 \u50756 \u47308 \u48176 \u45320 ', '\u49888 \u44508 \u54532 \u47196 \u47784 \u49496 \u48176 \u45320 ', '\u44592 \u53440 '],\
+                        datasets: [\{\
+                            data: [36.4, 22.9, 5.8, 6.9, 18.3, 5.3, 4.4],\
+                            backgroundColor: [\
+                                '#3b82f6',\
+                                '#10b981',\
+                                '#f59e0b',\
+                                '#8b5cf6',\
+                                '#ec4899',\
+                                '#ef4444',\
+                                '#94a3b8'\
+                            ]\
+                        \}]\
+                    \},\
+                    options: \{\
+                        responsive: true,\
+                        maintainAspectRatio: true,\
+                        plugins: \{\
+                            legend: \{ \
+                                display: true, \
+                                position: 'right',\
+                                labels: \{\
+                                    font: \{ size: 10 \}\
+                                \}\
+                            \}\
+                        \}\
+                    \}\
+                \});\
+            \}\
+\
+            // \uc0\u52292 \u45328 \u48324  \u49457 \u44284  \u53944 \u47116 \u46300  \u52264 \u53944 \
+            const multiLineCtx = document.getElementById('multiLineChart');\
+            if (multiLineCtx) \{\
+                new Chart(multiLineCtx, \{\
+                    type: 'line',\
+                    data: \{\
+                        labels: ['12/03', '12/07', '12/11', '12/15', '12/19', '12/23', '12/27', '01/02', '01/06'],\
+                        datasets: [\{\
+                            label: '\uc0\u48277 \u51064 ',\
+                            data: [90, 100, 150, 120, 140, 130, 110, 120, 75],\
+                            borderColor: '#3b82f6',\
+                            tension: 0.3\
+                        \}, \{\
+                            label: '\uc0\u53685 \u54633 \u54540 \u47196 \u54021 ',\
+                            data: [85, 80, 75, 80, 70, 60, 65, 70, 40],\
+                            borderColor: '#10b981',\
+                            tension: 0.3\
+                        \}, \{\
+                            label: '\uc0\u44160 \u49353 \u54540 \u47196 \u54021 ',\
+                            data: [20, 25, 22, 28, 24, 20, 18, 22, 15],\
+                            borderColor: '#f59e0b',\
+                            tension: 0.3\
+                        \}, \{\
+                            label: '\uc0\u44032 \u51077 \u50756 \u47308 \u48176 \u45320 ',\
+                            data: [65, 70, 60, 55, 62, 58, 52, 60, 35],\
+                            borderColor: '#ec4899',\
+                            tension: 0.3\
+                        \}]\
+                    \},\
+                    options: \{\
+                        responsive: true,\
+                        maintainAspectRatio: true,\
+                        plugins: \{\
+                            legend: \{ \
+                                display: true, \
+                                position: 'top',\
+                                labels: \{\
+                                    font: \{ size: 10 \}\
+                                \}\
+                            \}\
+                        \},\
+                        scales: \{\
+                            y: \{ beginAtZero: true \}\
+                        \}\
+                    \}\
+                \});\
+            \}\
+        \}\
+\
+        // \uc0\u53412 \u48372 \u46300  \u45348 \u48708 \u44172 \u51060 \u49496 \
+        document.addEventListener('keydown', function(e) \{\
+            if (e.key === 'ArrowLeft') \{\
+                changeSlide(-1);\
+            \} else if (e.key === 'ArrowRight') \{\
+                changeSlide(1);\
+            \}\
+        \});\
+\
+        // \uc0\u52488 \u44592  \u48260 \u53948  \u49345 \u53468  \u49444 \u51221 \
+        showSlide(0);\
+    </script>\
+</body>\
+</html>}
